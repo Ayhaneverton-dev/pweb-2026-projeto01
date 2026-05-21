@@ -6,3 +6,4 @@ Siga as instruções do [slide](https://dvcirilo-ifrn.github.io/pweb/slides/aula
 
 ## Equipe
 - Ayhan Everton
+- Júlio Miguel
