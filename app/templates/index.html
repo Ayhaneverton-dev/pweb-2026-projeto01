@@ -1,0 +1,260 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>FC Barcelona 2015</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+</head>
+<body>
+
+<!-- CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+
+<!-- NAV -->
+<header class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <span class="brand-badge">FCB</span>
+      <span class="brand-text">Barcelona <em>2015</em></span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html" class="nav-link active">Início</a>
+      <a href="elenco.html" class="nav-link">Elenco</a>
+      <a href="sobre.html" class="nav-link">Sobre</a>
+    </nav>
+    <button class="nav-menu-btn" id="menuBtn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="index.html" class="mob-link active">Início</a>
+    <a href="elenco.html" class="mob-link">Elenco</a>
+    <a href="sobre.html" class="mob-link">Sobre</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-texture"></div>
+  <div class="hero-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Temporada 2014 · 2015</p>
+    <h1 class="hero-headline">
+      A Equipe<br/>
+      <span class="stroke-text">Invencível</span>
+    </h1>
+    <p class="hero-desc">
+      O FC Barcelona escreveu história com uma das campanhas mais dominantes do futebol mundial — conquistando La Liga, Copa del Rey e a UEFA Champions League numa temporada inesquecível.
+    </p>
+    <div class="hero-actions">
+      <a href="elenco.html" class="btn-primary">Ver Elenco</a>
+      <a href="#historia" class="btn-ghost">Saiba Mais ↓</a>
+    </div>
+  </div>
+  <div class="hero-badge-wrap">
+    <div class="hero-big-badge">
+      <span class="hbb-year">2015</span>
+      <span class="hbb-label">Tríplice<br/>Coroa</span>
+      <div class="hbb-ring"></div>
+      <div class="hbb-ring hbb-ring-2"></div>
+    </div>
+  </div>
+  <div class="hero-scroll-hint">
+    <span>Role para baixo</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- TROFÉUS -->
+<section class="trophies-bar">
+  <div class="tb-inner">
+    <div class="tb-item">
+      <div class="tb-icon">🏆</div>
+      <div class="tb-info">
+        <strong>La Liga</strong>
+        <span>94 pontos · 110 gols</span>
+      </div>
+    </div>
+    <div class="tb-div"></div>
+    <div class="tb-item">
+      <div class="tb-icon">🏆</div>
+      <div class="tb-info">
+        <strong>Copa del Rey</strong>
+        <span>Final vs Athletic Bilbao · 3–1</span>
+      </div>
+    </div>
+    <div class="tb-div"></div>
+    <div class="tb-item">
+      <div class="tb-icon">🏆</div>
+      <div class="tb-info">
+        <strong>Champions League</strong>
+        <span>Final vs Juventus · 3–1</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HISTÓRIA -->
+<section class="historia" id="historia">
+  <div class="section-container">
+    <div class="historia-lead">
+      <div class="sec-label">História</div>
+      <h2 class="sec-title">Uma Temporada<br/>Para a Eternidade</h2>
+    </div>
+    <div class="historia-body">
+      <div class="historia-text">
+        <p>Sob o comando de <strong>Luis Enrique</strong>, o Barcelona de 2014–15 ergueu o futebol a um nível quase irreal. A chegada de <strong>Luis Suárez</strong> completou um ataque que não tinha paralelo na história — o trio <strong>MSN</strong> (Messi, Suárez e Neymar Jr.) marcou 122 gols na temporada, quebrando recordes e deixando rivais estupefatos.</p>
+        <p>No campeonato espanhol, o Barça foi soberano: 94 pontos em 38 jogos, com apenas 21 gols sofridos. A posse de bola fluída, herdada dos anos de Guardiola, foi turbinada com uma pressão alta devastadora que sufocava qualquer tentativa adversária de construção.</p>
+        <p>A cereja do bolo veio em <strong>6 de junho de 2015</strong>, em Berlim, no Olympiastadion. Diante de uma Juventus fortíssima, o Barcelona mostrou todo o seu talento: Rakitić abriu o placar ainda no primeiro minuto, Morata empatou, mas Suárez e Neymar fecharam o caixão azul e grená sobre qualquer sonho bianconero. Tríplice coroa consumada.</p>
+      </div>
+      <div class="historia-aside">
+        <div class="quote-block">
+          <div class="qb-line"></div>
+          <blockquote>"Este grupo de jogadores entrou para a história. Não há outra forma de descrevê-los."</blockquote>
+          <cite>— Luis Enrique, técnico do Barcelona 2015</cite>
+        </div>
+        <div class="mini-stats">
+          <div class="ms-row">
+            <span class="ms-num">122</span>
+            <span class="ms-desc">Gols marcados pelo MSN</span>
+          </div>
+          <div class="ms-row">
+            <span class="ms-num">58</span>
+            <span class="ms-desc">Gols de Lionel Messi</span>
+          </div>
+          <div class="ms-row">
+            <span class="ms-num">25</span>
+            <span class="ms-desc">Assistências de Neymar Jr.</span>
+          </div>
+          <div class="ms-row">
+            <span class="ms-num">40</span>
+            <span class="ms-desc">Jogos vencidos na temporada</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LINHA DO TEMPO -->
+<section class="timeline-sec">
+  <div class="section-container">
+    <div class="sec-label" style="text-align:center">Momentos-Chave</div>
+    <h2 class="sec-title" style="text-align:center;margin-bottom:60px">A Jornada ao Topo</h2>
+    <div class="timeline">
+      <div class="tl-item tl-left">
+        <div class="tl-card">
+          <span class="tl-date">Ago 2014</span>
+          <h3>Início da Temporada</h3>
+          <p>Luis Enrique assume como técnico. Luis Suárez chega do Liverpool por €82 milhões.</p>
+        </div>
+        <div class="tl-dot"></div>
+      </div>
+      <div class="tl-item tl-right">
+        <div class="tl-card">
+          <span class="tl-date">Out 2014</span>
+          <h3>MSN Explode</h3>
+          <p>O trio marca 11 gols em apenas 3 partidas. O mundo percebe que algo histórico está nascendo.</p>
+        </div>
+        <div class="tl-dot"></div>
+      </div>
+      <div class="tl-item tl-left">
+        <div class="tl-card">
+          <span class="tl-date">Jan 2015</span>
+          <h3>Virada na Liga</h3>
+          <p>Barcelona supera o Real Madrid na tabela e abre vantagem decisiva rumo ao título espanhol.</p>
+        </div>
+        <div class="tl-dot"></div>
+      </div>
+      <div class="tl-item tl-right">
+        <div class="tl-card">
+          <span class="tl-date">Mai 2015</span>
+          <h3>La Liga + Copa del Rey</h3>
+          <p>Dois títulos em dias: o campeonato espanhol e a Copa do Rei são conquistas com folga.</p>
+        </div>
+        <div class="tl-dot"></div>
+      </div>
+      <div class="tl-item tl-left">
+        <div class="tl-card">
+          <span class="tl-date">Jun 2015</span>
+          <h3>Champions League 🏆</h3>
+          <p>Berlim, 6 de junho. Barcelona 3–1 Juventus. A tríplice coroa está completa. A lenda está escrita.</p>
+        </div>
+        <div class="tl-dot"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JANGLE CHAT -->
+<section class="jangle-section">
+  <div class="section-container jangle-inner">
+    <div class="jangle-info">
+      <div class="sec-label">Assistente IA</div>
+      <h2 class="sec-title">Converse com<br/>o <span class="accent">Jangle</span></h2>
+      <p>Tem dúvidas sobre o Barcelona 2015? Nosso assistente especialista responde tudo — estatísticas, jogadores, partidas e muito mais.</p>
+      <div class="jangle-features">
+        <div class="jf-item">⚡ Respostas instantâneas</div>
+        <div class="jf-item">📊 Estatísticas precisas</div>
+        <div class="jf-item">🌍 Em português</div>
+      </div>
+    </div>
+    <div class="jangle-chat">
+      <div class="chat-header">
+        <div class="chat-avatar">J</div>
+        <div class="chat-meta">
+          <strong>Jangle</strong>
+          <span class="status-dot"></span><span>Online</span>
+        </div>
+      </div>
+      <div class="chat-messages" id="chatMessages">
+        <div class="msg ai">
+          <div class="msg-label">Jangle</div>
+          <div class="msg-bubble">Olá! 👋 Sou especialista no Barcelona 2014–15. Pergunte sobre jogadores, títulos, estatísticas ou qualquer momento dessa temporada histórica!</div>
+        </div>
+      </div>
+      <div class="chat-chips" id="chatChips">
+        <button class="chip" onclick="quickSend('Quem foi o artilheiro da temporada?')">Artilheiro</button>
+        <button class="chip" onclick="quickSend('Como foi a final da Champions League?')">Final UCL</button>
+        <button class="chip" onclick="quickSend('Fale sobre o MSN')">Trio MSN</button>
+        <button class="chip" onclick="quickSend('Qual foi o papel de Xavi?')">Xavi</button>
+      </div>
+      <div class="chat-input-row">
+        <input type="text" id="chatInput" placeholder="Faça sua pergunta…" autocomplete="off"/>
+        <button class="send-btn" id="sendBtn" onclick="sendMessage()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="brand-badge sm">FCB</span>
+      <span>FC Barcelona 2015</span>
+    </div>
+    <nav class="footer-nav">
+      <a href="index.html">Início</a>
+      <a href="elenco.html">Elenco</a>
+      <a href="sobre.html">Sobre</a>
+    </nav>
+    <p class="footer-copy">Site fan-made · Projeto acadêmico · 2025</p>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

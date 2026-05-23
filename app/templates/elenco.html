@@ -1,0 +1,87 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Elenco · FC Barcelona 2015</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+
+<header class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <span class="brand-badge">FCB</span>
+      <span class="brand-text">Barcelona <em>2015</em></span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html" class="nav-link">Início</a>
+      <a href="elenco.html" class="nav-link active">Elenco</a>
+      <a href="sobre.html" class="nav-link">Sobre</a>
+    </nav>
+    <button class="nav-menu-btn" id="menuBtn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="index.html" class="mob-link">Início</a>
+    <a href="elenco.html" class="mob-link active">Elenco</a>
+    <a href="sobre.html" class="mob-link">Sobre</a>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="hero-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+  </div>
+  <div class="ph-content">
+    <p class="hero-eyebrow">Temporada 2014 · 2015</p>
+    <h1 class="ph-title">O <span class="stroke-text">Elenco</span></h1>
+    <p class="ph-sub">Os 11 titulares que foram ao campo em Berlim e levantaram a taça da UEFA Champions League.</p>
+  </div>
+</section>
+
+<!-- FORMATION BANNER -->
+<div class="formation-banner">
+  <span>Formação preferida:</span>
+  <strong>4 – 3 – 3</strong>
+  <span class="formation-coach">Técnico: Luis Enrique</span>
+</div>
+
+<!-- PLAYERS GRID -->
+<section class="players-section">
+  <div class="section-container">
+    <div class="players-grid" id="playersGrid">
+      <!-- Injetado via JS -->
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="brand-badge sm">FCB</span>
+      <span>FC Barcelona 2015</span>
+    </div>
+    <nav class="footer-nav">
+      <a href="index.html">Início</a>
+      <a href="elenco.html">Elenco</a>
+      <a href="sobre.html">Sobre</a>
+    </nav>
+    <p class="footer-copy">Site fan-made · Projeto acadêmico · 2025</p>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
