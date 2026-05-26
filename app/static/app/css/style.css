@@ -324,7 +324,7 @@ cite { display:block; margin-top:10px; font-size:.76rem; color:var(--texto2); fo
 .ic-row span { color:var(--texto2); }
 
 .autores-section { padding:90px 0; background:var(--cinza1); }
-.autores-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+.autores-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
 .autor-card { background:rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.06); padding:28px 24px; transition:border-color var(--trans),transform var(--trans); }
 .autor-card:hover { border-color:rgba(0,77,152,.4); transform:translateY(-4px); }
 .autor-avatar { width:68px; height:68px; border-radius:50%; display:grid; place-items:center; font-family:'Playfair Display',serif; font-size:1.7rem; font-weight:900; color:rgba(255,255,255,.8); margin-bottom:18px; }
