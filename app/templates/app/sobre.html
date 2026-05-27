@@ -1,39 +1,11 @@
+{% extends 'app/base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sobre · FC Barcelona 2015</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="{% static 'app/css/style.css' %}"/>
-</head>
-<body>
+{% block title %}Sobre · FC Barcelona 2015{% endblock %}
+{% block nav_sobre %}active{% endblock %}
+{% block mob_sobre %}active{% endblock %}
 
-<!-- ═══ MENU GLOBAL ═══ -->
-<header class="navbar" id="navbar">
-  <div class="nav-inner">
-    <a href="{% url 'index'%}" class="nav-brand">
-      <span class="brand-badge">FCB</span>
-      <span class="brand-text">Barcelona <em>2015</em></span>
-    </a>
-    <nav class="nav-links">
-      <a href="{% url 'index'%}"  class="nav-link">Início</a>
-      <a href="{% url 'elenco'%}" class="nav-link">Elenco</a>
-      <a href="{% url 'sobre'%}"  class="nav-link active">Sobre</a>
-    </nav>
-    <button class="nav-menu-btn" id="menuBtn" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-  <div class="nav-mobile" id="navMobile">
-    <a href="{% url 'index'%}"  class="mob-link">Início</a>
-    <a href="{% url 'elenco'%}" class="mob-link">Elenco</a>
-    <a href="{% url 'sobre'%}" class="mob-link active">Sobre</a>
-  </div>
-</header>
+{% block content %}
 
 <!-- ═══ PAGE HERO ═══ -->
 <section class="page-hero">
@@ -55,28 +27,30 @@
       <div class="sp-main reveal">
         <div class="sec-label">O Projeto</div>
         <h2 class="sec-title">Por Que Este Site?</h2>
-        <p>Este site foi desenvolvido como um <strong>projeto acadêmico</strong> da disciplina de Programação de Aplicação Web, com o objetivo de praticar conceitos de Django, Framework e Ativação do Servidor, aplicados a um tema apaixonante: o histórico FC Barcelona da temporada 2014–15.</p>
+        <p>{{ sobre.descricao }}</p>
         <p>A escolha do Barcelona 2015 não foi acidental. Aquela equipe representa um dos maiores feitos coletivos do esporte moderno: a conquista da <strong>tríplice coroa</strong> com um futebol tão belo quanto eficaz — um tema rico em dados, histórias e personagens.</p>
-        <p>O site é composto por três páginas: <strong>Início</strong> (histórico e conquistas), <strong>Elenco</strong> (os 11 titulares da final) e esta página de <strong>Sobre</strong>.</p>
+        <p>O site é composto por três páginas:
+          {% for p in sobre.paginas %}
+            <strong>{{ p }}</strong>{% if not forloop.last %},{% else %}.{% endif %}
+          {% endfor %}
+        </p>
         <div>
           <div class="sec-label" style="margin-top:28px">Tecnologias Utilizadas</div>
           <div class="tech-tags">
-            <span class="tech-tag">HTML</span>
-            <span class="tech-tag">CSS</span>
-            <span class="tech-tag">JavaScript</span>
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">Django</span>
+            {% for tech in sobre.tecnologias %}
+              <span class="tech-tag">{{ tech }}</span>
+            {% endfor %}
           </div>
         </div>
       </div>
       <div class="sp-aside reveal">
         <div class="info-card">
           <div class="ic-header">📋 Ficha do Projeto</div>
-          <div class="ic-row"><span>Disciplina</span><strong>Programação de Aplicação Web</strong></div>
-          <div class="ic-row"><span>Tema</span><strong>FC Barcelona 2014–15</strong></div>
-          <div class="ic-row"><span>Páginas</span><strong>3 (Início, Elenco, Sobre)</strong></div>
-          <div class="ic-row"><span>Jogadores</span><strong>11 titulares da UCL</strong></div>
-          <div class="ic-row"><span>Ano</span><strong>2026</strong></div>
+          <div class="ic-row"><span>Disciplina</span><strong>{{ sobre.disciplina }}</strong></div>
+          <div class="ic-row"><span>Tema</span><strong>{{ sobre.tema }}</strong></div>
+          <div class="ic-row"><span>Páginas</span><strong>{{ sobre.paginas|length }} páginas</strong></div>
+          <div class="ic-row"><span>Jogadores</span><strong>{{ sobre.jogadores }}</strong></div>
+          <div class="ic-row"><span>Ano</span><strong>{{ sobre.ano }}</strong></div>
         </div>
       </div>
     </div>
@@ -90,50 +64,27 @@
     <h2 class="sec-title reveal" style="text-align:center;margin-bottom:48px">Os Autores</h2>
     <div class="autores-grid">
 
+      {% for autor in sobre.autores %}
       <div class="autor-card reveal">
-        <div class="autor-avatar" style="background:linear-gradient(135deg,#004d98,#a50044)">J</div>
+        <div class="autor-avatar"
+             style="background:linear-gradient(135deg, {{ autor.cor_inicio }}, {{ autor.cor_fim }})">
+          {{ autor.inicial }}
+        </div>
         <div class="autor-info">
-          <h3>Julio</h3>
-          <span class="autor-role">Desenvolvimento Back-End</span>
-          <p class="autor-desc">"Construção da lógica de servidor"</p>
+          <h3>{{ autor.nome }}</h3>
+          <span class="autor-role">{{ autor.papel }}</span>
+          <p class="autor-desc">{{ autor.descricao }}</p>
           <div class="autor-tags">
-           <span>Pesquisa</span><span>Conteúdo</span><span>Python</span><span>Django</span>
+            {% for tag in autor.tags %}
+              <span>{{ tag }}</span>
+            {% endfor %}
           </div>
         </div>
       </div>
-
-      <div class="autor-card reveal">
-        <div class="autor-avatar" style="background:linear-gradient(135deg,#a50044,#edbb00)">A</div>
-        <div class="autor-info">
-          <h3>Ayhan</h3>
-          <span class="autor-role">Desenvolvimento Front-End</span>
-          <p class="autor-desc">Responsável pela arquitetura do site, estilização CSS e estrutura das três páginas.</p>
-          <div class="autor-tags">
-            <span>Pesquisa</span><span>Conteúdo</span><span>HTML</span><span>CSS</span><span>JavaScript</span>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
 
     </div>
   </div>
 </section>
 
-<!-- ═══ FOOTER GLOBAL ═══ -->
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <span class="brand-badge sm">FCB</span>
-      <span>FC Barcelona 2015</span>
-    </div>
-    <nav class="footer-nav">
-      <a href="{% url 'index'%}">Início</a>
-      <a href="{% url 'elenco'%}">Elenco</a>
-      <a href="{% url 'sobre'%}">Sobre</a>
-    </nav>
-    <p class="footer-copy">&copy; 2026 FC Barcelona 2015 &mdash; Projeto Acadêmico &mdash; Todos os direitos reservados</p>
-  </div>
-</footer>
-
-<script src="{% static 'app/js/main.js' %}"></script>
-</body>
-</html>
+{% endblock %}

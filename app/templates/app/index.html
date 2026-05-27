@@ -1,41 +1,13 @@
+{% extends 'app/base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Início · FC Barcelona 2015</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="{% static 'app/css/style.css' %}"/>
-</head>
-<body>
+{% block title %}Início · FC Barcelona 2015{% endblock %}
+{% block nav_inicio %}active{% endblock %}
+{% block mob_inicio %}active{% endblock %}
 
-<!-- ═══ MENU GLOBAL ═══ -->
-<header class="navbar" id="navbar">
-  <div class="nav-inner">
-    <a href="{% url 'index'%}" class="nav-brand">
-      <span class="brand-badge">FCB</span>
-      <span class="brand-text">Barcelona <em>2015</em></span>
-    </a>
-    <nav class="nav-links">
-      <a href="{% url 'index'%}" class="nav-link active">Início</a>
-      <a href="{% url 'elenco'%}" class="nav-link">Elenco</a>
-      <a href="{% url 'sobre'%}" class="nav-link">Sobre</a>
-    </nav>
-    <button class="nav-menu-btn" id="menuBtn" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-  <div class="nav-mobile" id="navMobile">
-    <a href="{% url 'index'%}" class="mob-link active">Início</a>
-    <a href="{% url 'elenco'%}" class="mob-link">Elenco</a>
-    <a href="{% url 'sobre'%}"  class="mob-link">Sobre</a>
-  </div>
-</header>
+{% block content %}
 
-<!-- ═══ HERO ═══ -->
+<!--  HERO  -->
 <section class="hero">
   <div class="hero-blobs">
     <div class="blob blob-1"></div>
@@ -48,11 +20,12 @@
       <span class="stroke-text">Invencível</span>
     </h1>
     <p class="hero-desc">
-      O FC Barcelona escreveu história com uma das campanhas mais dominantes do futebol mundial — conquistando La Liga, Copa del Rey e a UEFA Champions League numa temporada inesquecível.
+      O FC Barcelona escreveu história com uma das campanhas mais dominantes do futebol mundial —
+      conquistando La Liga, Copa del Rey e a UEFA Champions League numa temporada inesquecível.
     </p>
     <div class="hero-actions">
-      <a href="{% url 'elenco'%}"class="btn-primary">Ver Elenco</a>
-      <a href="#historia"   class="btn-ghost">Saiba Mais ↓</a>
+      <a href="{% url 'elenco' %}" class="btn-primary">Ver Elenco</a>
+      <a href="#historia"          class="btn-ghost">Saiba Mais ↓</a>
     </div>
   </div>
   <div class="hero-badge-wrap">
@@ -69,7 +42,6 @@
   </div>
 </section>
 
-<!-- ═══ BARRA DE TROFÉUS ═══ -->
 <section class="trophies-bar">
   <div class="tb-inner">
     <div class="tb-item reveal">
@@ -98,7 +70,6 @@
   </div>
 </section>
 
-<!-- ═══ HISTÓRIA ═══ -->
 <section class="historia" id="historia">
   <div class="section-wrap">
     <div class="historia-lead reveal">
@@ -118,29 +89,16 @@
           <cite>— Luis Enrique, técnico do Barcelona 2015</cite>
         </div>
         <div class="mini-stats">
-          <div class="ms-row">
-            <span class="ms-num">122</span>
-            <span class="ms-desc">Gols marcados pelo MSN</span>
-          </div>
-          <div class="ms-row">
-            <span class="ms-num">58</span>
-            <span class="ms-desc">Gols de Lionel Messi</span>
-          </div>
-          <div class="ms-row">
-            <span class="ms-num">94</span>
-            <span class="ms-desc">Pontos conquistados na La Liga</span>
-          </div>
-          <div class="ms-row">
-            <span class="ms-num">3</span>
-            <span class="ms-desc">Títulos na temporada</span>
-          </div>
+          <div class="ms-row"><span class="ms-num">122</span><span class="ms-desc">Gols marcados pelo MSN</span></div>
+          <div class="ms-row"><span class="ms-num">58</span><span class="ms-desc">Gols de Lionel Messi</span></div>
+          <div class="ms-row"><span class="ms-num">94</span><span class="ms-desc">Pontos conquistados na La Liga</span></div>
+          <div class="ms-row"><span class="ms-num">3</span><span class="ms-desc">Títulos na temporada</span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ LINHA DO TEMPO ═══ -->
 <section class="timeline-sec">
   <div class="section-wrap">
     <div class="sec-label reveal" style="text-align:center">Momentos-Chave</div>
@@ -190,22 +148,4 @@
   </div>
 </section>
 
-<!-- ═══ FOOTER GLOBAL ═══ -->
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <span class="brand-badge sm">FCB</span>
-      <span>FC Barcelona 2015</span>
-    </div>
-    <nav class="footer-nav">
-      <a href="{% url 'index'%}">Início</a>
-      <a href="{% url 'elenco'%}">Elenco</a>
-      <a href="{% url 'sobre'%}">Sobre</a>
-    </nav>
-    <p class="footer-copy">&copy; 2026 FC Barcelona 2015 &mdash; Projeto Acadêmico &mdash; Todos os direitos reservados</p>
-  </div>
-</footer>
-
-<script src="{% static 'app/js/main.js' %}"></script>
-</body>
-</html>
+{% endblock %}
