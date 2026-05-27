@@ -7,7 +7,6 @@
 
 {% block content %}
 
-<!-- ═══ PAGE HERO ═══ -->
 <section class="page-hero">
   <div class="hero-blobs">
     <div class="blob blob-1"></div>
@@ -20,7 +19,6 @@
   </div>
 </section>
 
-<!-- ═══ SOBRE O PROJETO ═══ -->
 <section class="sobre-projeto">
   <div class="section-wrap">
     <div class="sp-grid">
@@ -28,7 +26,7 @@
         <div class="sec-label">O Projeto</div>
         <h2 class="sec-title">Por Que Este Site?</h2>
         <p>{{ sobre.descricao }}</p>
-        <p>A escolha do Barcelona 2015 não foi acidental. Aquela equipe representa um dos maiores feitos coletivos do esporte moderno: a conquista da <strong>tríplice coroa</strong> com um futebol tão belo quanto eficaz — um tema rico em dados, histórias e personagens.</p>
+        <p>A escolha do Barcelona de 2015 não foi acidental. Aquela equipe representa um dos maiores feitos coletivos do esporte moderno: a conquista da <strong>tríplice coroa</strong> com um futebol tão belo quanto eficaz — um tema rico em dados, histórias e personagens.</p>
         <p>O site é composto por três páginas:
           {% for p in sobre.paginas %}
             <strong>{{ p }}</strong>{% if not forloop.last %},{% else %}.{% endif %}
@@ -57,7 +55,6 @@
   </div>
 </section>
 
-<!-- ═══ AUTORES ═══ -->
 <section class="autores-section">
   <div class="section-wrap">
     <div class="sec-label reveal" style="text-align:center">Equipe</div>
